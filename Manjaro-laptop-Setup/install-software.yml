@@ -1,4 +1,4 @@
--- name: add Pacman Repos (Chaotic-AUR,)
+- name: add Pacman Repos (Chaotic-AUR,)
   blockinfile:
     path: /etc/pacman.conf
     backup: yes
@@ -9,36 +9,36 @@
       Server = http://lonewolf-builder.duckdns.org/$repo/x86_64
       Server = http://chaotic.bangl.de/$repo/x86_64
       Server = https://repo.kitsuna.net/x86_64
-    validate: '/usr/sbin/sshd -T -f %s'
--- name: Update & upgrade pacman
-  pacman:
-    update_cache: yes
-    upgrade: yes
---name: Install package's - Pacman
-  pacman:
-    name:
-      - Docker
-      - Firefox
-      - vlc
-      - virtualbox
-      - nextcloud
-      - gimp
-      - aws-cli
-      - i3-wm 
-      - code
-      - ansible
-      - npm
-      - timeshift
-      - latte-dock
-      - qbittorrent
-      - python3
-      - python-pip
-      - stacer
-      - clamav clamtk
-      - p7zip
-      - filezilla
-      - steam
-      - hamsket
-      - snapd
-      - bind-tools
-    state: present
+    validate: '/etc/pacman.cof -T -f %s'
+- name: Update & upgrade pacman
+ pacman:
+  update_cache: yes
+  upgrade: yes
+- name: Install package's - Pacman
+ pacman:
+  name:
+    - Docker
+    - Firefox
+    - vlc
+    - virtualbox
+    - nextcloud
+    - gimp
+    - aws-cli
+    - i3-wm 
+    - code
+    - ansible
+    - npm
+    - timeshift
+    - latte-dock
+    - qbittorrent
+    - python3
+    - python-pip
+    - stacer
+    - clamav clamtk
+    - p7zip
+    - filezilla
+    - steam
+    - hamsket
+    - snapd
+    - bind-tools
+  state: present
