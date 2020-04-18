@@ -36,4 +36,5 @@
       - hamsket
       - snapd
       - bind-tools
+      - nvme-cli
      state: present
