@@ -3,7 +3,6 @@
  become:true
 
  pre_tasks:
-
  -name: update repos
   pacman:
    update_cache:yes
