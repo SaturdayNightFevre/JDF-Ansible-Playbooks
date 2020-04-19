@@ -6,9 +6,9 @@
 
  -name: update repos
   pacman:
-   update_cache: yes
-   upgrade: yes
-   changed_when: False
+   update_cache:yes
+   upgrade:yes
+   changed_when:False
 
  tasks:
- - include: tasks/packages.yml
+ - include:tasks/packages.yml
