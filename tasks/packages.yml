@@ -38,4 +38,5 @@
       - bind-tools
       - zoom
       - nvme-cli
+      - sqlite
      state: present
