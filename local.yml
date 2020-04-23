@@ -5,9 +5,10 @@
   pre_tasks:
 
   - name: update-repos
-    pacman: update_cache:yes
-    upgrade: yes
-    changed_when: False
+    pacman: 
+     update_cache: yes
+     upgrade: yes
+     changed_when: False
   
   tasks:
 

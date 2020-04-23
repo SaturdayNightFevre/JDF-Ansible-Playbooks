@@ -1,7 +1,7 @@
-- name: add Pacman Repos (Chaotic-AUR,)
-  hosts: all
-  become: true
-  tasks:
+#- #name: add Pacman Repos (Chaotic-AUR,)
+ # hosts: all
+  #become: true
+  #tasks:
   #- name: add Pacman Repos (Chaotic-AUR,)
     #blockinfile:
      #path: /etc/pacman.conf
@@ -12,6 +12,7 @@
      #validate: '/etc/pacman.conf -T -f %s'
 
   - name: Install package's - Pacman
+    become: true
     pacman:
      name:
       - docker
@@ -39,4 +40,5 @@
       - zoom
       - nvme-cli
       - sqlite
+      - xclip
      state: present
