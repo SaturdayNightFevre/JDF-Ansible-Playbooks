@@ -1,44 +1,30 @@
-#- #name: add Pacman Repos (Chaotic-AUR,)
- # hosts: all
-  #become: true
-  #tasks:
-  #- name: add Pacman Repos (Chaotic-AUR,)
-    #blockinfile:
-     #path: /etc/pacman.conf
-     #backup: yes
-     #marker: "# {mark} ANSIBLE MANAGED BLOCK "
-     #insertafter: "#server = file://home/custompkgs"
-     #block: "{{ lookup('file', 'AUR-Repos.txt') }}"
-     #validate: '/etc/pacman.conf -T -f %s'
-
-  - name: Install package's - Pacman
-    become: true
-    pacman:
-     name:
-      - docker
-      - virtualbox
-      - nextcloud-client
-      - gimp
-      - aws-cli
-      - i3-wm 
-      - code
-      - ansible
-      - npm
-      - timeshift
-      - latte-dock
-      - qbittorrent
-      - python3
-      - python-pip
-      - stacer
-      - clamav clamtk
-      - p7zip
-      - filezilla
-      - steam
-      - hamsket
-      - snapd
-      - bind-tools
-      - zoom
-      - nvme-cli
-      - sqlite
-      - xclip
-     state: present
+- name: Install package's - Pacman
+  pacman:
+   name:
+    - docker
+    - virtualbox
+    - nextcloud-client
+    - gimp
+    - aws-cli
+    - i3-wm 
+    - code
+    - ansible
+    - npm
+    - timeshift
+    - latte-dock
+    - qbittorrent
+    - python3
+    - python-pip
+    - stacer
+    - clamav clamtk
+    - p7zip
+    - filezilla
+    - steam
+    - hamsket
+    - snapd
+    - bind-tools
+    - zoom
+    - nvme-cli
+    - sqlite
+    - xclip
+   state: present
