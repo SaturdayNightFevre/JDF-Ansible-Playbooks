@@ -68,11 +68,6 @@
   tags: stacer
   become: true
 
-- name: install clamav clamtk
-  pacman: name=clamav clamtk state=present
-  tags: clamav clamtk
-  become: true
-
 - name: install p7zip
   pacman: name=p7zip state=present
   tags: p7zip
@@ -122,3 +117,12 @@
   pacman: name=xclip state=present
   tags: xclip
   become: true
+
+- name: install gparted
+  pacman: name=gparted state=present
+  tags: gparted
+  become: true
+
+
+  snap install bw
+  snap install spotify

@@ -1,0 +1,1 @@
+mount.cifs //IP or NAS NetBiosname/PATH/TO/NAS/ /mountpoint -o user=User pass=password dom=Domain
