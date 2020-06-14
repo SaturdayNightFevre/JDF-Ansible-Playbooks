@@ -24,7 +24,7 @@
   become: yes
   lineinfile: 
    path: /etc/bluetooth/main.conf
-   regex: *FastConnectable*
+   regex: '^FastConnectable ='
    line: FastConnectable = true
    state: present
    backup: yes
