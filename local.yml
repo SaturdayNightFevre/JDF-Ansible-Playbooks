@@ -12,4 +12,5 @@
   
   tasks:
 
-   - include: tasks/packages.yml
+   - include: tasks/Install-packages.yml
+   - include: tasks/Uninstall-packages.yml

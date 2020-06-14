@@ -1,0 +1,4 @@
+- name: uninstall octopi
+  pacman: name=octopi state=absent
+  tags: octopi
+  become: true
