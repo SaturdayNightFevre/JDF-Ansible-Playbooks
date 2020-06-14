@@ -4,7 +4,8 @@
     state: present
     backup: yes
     insertafter: EOF
-    marker: "<!-- ANSIBLE MANAGED BLOCK -->"
+    validate: 
+    marker: "<!-- (mark) ANSIBLE MANAGED BLOCK -->"
     block: |
       [chaotic-aur]
       Server = http://lonewolf-builder.duckdns.org/$repo/x86_64
