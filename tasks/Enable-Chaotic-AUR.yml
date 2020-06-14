@@ -11,6 +11,10 @@
       Server = http://chaotic.bangl.de/$repo/x86_64
       Server = https://repo.kitsuna.net/x86_64
 
-- name: Add Chaotic Keys
+- name: Add Chaotic Key Mozilla
   become: yes
-  command: pacman-key --keyserver keys.mozilla.org -r 3056513887B78AEB && pacman-key --lsign-key 3056513887B78AEB
+  command: pacman-key --keyserver keys.mozilla.org -r 3056513887B78AEB 
+
+  - name: Add Chaotic Key Lsign
+  become: yes
+  command: pacman-key --lsign-key 3056513887B78AEB
