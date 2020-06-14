@@ -23,7 +23,7 @@
 - name: Enable Bluetooth fast connect
   become: yes
   lineinfile: 
-   path: /etc//etc/bluetooth/main.conf
+   path: /etc/bluetooth/main.conf
    regex: ^FastConnectable*
    line: FastConnectable = true
    state: present
