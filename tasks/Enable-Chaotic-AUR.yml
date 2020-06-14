@@ -15,6 +15,6 @@
   become: yes
   command: pacman-key --keyserver keys.mozilla.org -r 3056513887B78AEB 
 
-  - name: Add Chaotic Key Lsign
+- name: Add Chaotic Key Lsign
   become: yes
   command: pacman-key --lsign-key 3056513887B78AEB
