@@ -19,3 +19,12 @@
 - name: Add Chaotic Key Lsign
   become: yes
   command: pacman-key --lsign-key 3056513887B78AEB
+
+- name: Enable Bluetooth fast connect
+  become: yes
+  lineinfile: 
+   path: /etc//etc/bluetooth/main.conf
+   regex: ^FastConnectable*
+   line: FastConnectable = true
+   state: present
+   backup: yes
