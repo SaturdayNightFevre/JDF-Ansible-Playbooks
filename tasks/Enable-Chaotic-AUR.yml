@@ -1,0 +1,16 @@
+- name: Insert chaotic-aur into pacman conf
+  blockinfile:
+    path: /etc/pacman.conf
+    state: present
+    backup: yes
+    insertafter: EOF
+    marker: "<!-- ANSIBLE MANAGED BLOCK -->"
+    block: |
+      [chaotic-aur]
+      Server = http://lonewolf-builder.duckdns.org/$repo/x86_64
+      Server = http://chaotic.bangl.de/$repo/x86_64
+      Server = https://repo.kitsuna.net/x86_64
+
+- name: Add Chaotic Keys
+  become: yes
+  command: pacman-key --keyserver keys.mozilla.org -r 3056513887B78AEB && pacman-key --lsign-key 3056513887B78AEB
