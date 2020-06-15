@@ -1,0 +1,23 @@
+- name: Libinput Gestures
+  blockinfile:
+    path: /etc/libinput-gestures.conf
+    state: present
+    backup: yes
+    insertafter: EOF
+    validate: 
+    marker: "#<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+    block: |
+          # show open apps
+
+          gesture swipe up 3	xdotool key ctrl+F9
+
+          # show application dash
+
+         gesture swipe up 4	xdotool key alt+F1
+
+         # show desktops
+
+         gesture swipe down 4     xdotool key ctrl+F8
+
+         # show desktop
+         gesture swipe down 3     xdotool key super+d
