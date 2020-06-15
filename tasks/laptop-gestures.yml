@@ -21,3 +21,9 @@
 
           # show desktop
           gesture swipe down 3     xdotool key super+d
+
+          # KDE Plasma open/close overview
+          gesture pinch in      xdotool key ctrl+F9
+          gesture pinch out     xdotool key ctrl+F9
+
+          device all
