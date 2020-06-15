@@ -15,10 +15,12 @@
 - name: Add Chaotic Key Mozilla
   become: yes
   command: pacman-key --keyserver keys.mozilla.org -r 3056513887B78AEB 
+  changed_when: False
 
 - name: Add Chaotic Key Lsign
   become: yes
   command: pacman-key --lsign-key 3056513887B78AEB
+  changed_when: False
 
 - name: Enable Bluetooth fast connect
   become: yes
@@ -28,3 +30,7 @@
    line: FastConnectable = true
    state: present
    backup: yes
+
+#- name: Setup Auto SSH
+#- name: Fix Sleep issues
+#- name: Disabl exhci-wakeup
