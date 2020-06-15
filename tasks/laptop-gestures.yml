@@ -13,11 +13,11 @@
 
           # show application dash
 
-         gesture swipe up 4	xdotool key alt+F1
+          gesture swipe up 4	xdotool key alt+F1
 
-         # show desktops
+          # show desktops
 
-         gesture swipe down 4     xdotool key ctrl+F8
+          gesture swipe down 4     xdotool key ctrl+F8
 
-         # show desktop
-         gesture swipe down 3     xdotool key super+d
+          # show desktop
+          gesture swipe down 3     xdotool key super+d
