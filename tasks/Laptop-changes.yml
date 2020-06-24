@@ -66,7 +66,7 @@
 - name: Fix Sleep issues
   become: yes
   blockinfile:
-    path: etc/systemd/sleep.conf
+    path: /etc/systemd/sleep.conf
     state: present
     backup: yes
     insertafter: EOF
