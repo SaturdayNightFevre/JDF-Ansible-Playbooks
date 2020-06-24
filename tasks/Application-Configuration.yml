@@ -27,3 +27,13 @@
           gesture pinch out     xdotool key ctrl+F9
 
           device all
+
+#- name: Nexcloud Configuration
+   copy:
+    src: ./files/HomeConfig/Nextcloud/
+    dest: ~/.config/
+   systemd:
+    state: restarted
+    name: nextcloud
+    daemon_reload: yes
+   become: yes 

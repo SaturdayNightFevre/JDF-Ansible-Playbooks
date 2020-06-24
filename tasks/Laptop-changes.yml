@@ -31,6 +31,51 @@
    state: present
    backup: yes
 
-#- name: Setup Auto SSH
-#- name: Fix Sleep issues
+- name: Setup Auto SSH
+  bacome: yes
+  blockinfile: 
+   path: ~/.bash_profile
+   state: present
+   insertafter: EOF
+   marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+   block: |
+    #add ssh agent at boot
+    SSH_ENV="$HOME/.ssh/environment"
+
+    function start_agent {
+    echo "Initialising new SSH agent..."
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add;
+    }
+
+    # Source SSH settings, if applicable
+      
+    if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}" > /dev/null
+    #ps ${SSH_AGENT_PID} doesn't work under cywgin
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+      start_agent;
+     }
+    else
+        start_agent;
+    fi
+
+
+- name: Fix Sleep issues
+  become: yes
+  blockinfile:
+    path: etc/systemd/sleep.conf
+    state: present
+    backup: yes
+    insertafter: EOF
+    validate: 
+    marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+    block: |
+      [Sleep]
+      AllowSuspend=yes
+      AllowHibernation=yes
+      SuspendState=freeze mem standby
 #- name: Disabl exhci-wakeup
