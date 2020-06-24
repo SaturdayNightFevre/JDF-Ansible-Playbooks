@@ -29,11 +29,11 @@
           device all
 
 #- name: Nexcloud Configuration
-   copy:
-    src: ./files/HomeConfig/Nextcloud/
-    dest: ~/.config/
-   systemd:
-    state: restarted
-    name: nextcloud
-    daemon_reload: yes
-   become: yes 
+#   copy:
+#    src: ./files/HomeConfig/Nextcloud/
+#    dest: ~/.config/
+#   systemd:
+#    state: restarted
+#    name: nextcloud
+#    daemon_reload: yes
+#   become: yes 
