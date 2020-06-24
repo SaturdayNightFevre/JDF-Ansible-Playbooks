@@ -71,7 +71,7 @@
     backup: yes
     insertafter: EOF
     validate: 
-    marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+    marker: "#<!-- {mark} ANSIBLE MANAGED BLOCK -->"
     block: |
       [Sleep]
       AllowSuspend=yes
