@@ -14,4 +14,5 @@
    - include: tasks/Laptop-changes.yml
    - include: tasks/Install-packages.yml
    - include: tasks/Uninstall-packages.yml
+   - include: tasks/Theming.yml
    - include: tasks/Application-Configuration.yml
