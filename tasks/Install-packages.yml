@@ -178,7 +178,27 @@
   tags: papirus-icon-theme
   become: true
 
-- name: install qt5-xmlpatterns
+- name: install qt5-base
+  pacman: name=qt5-base state=present
+  tags: qt5-base
+  become: true
+
+- name: install qt5-svg
+  pacman: name=qt5-svg state=present
+  tags: qt5-svg
+  become: true
+
+- name: install qt5-declarative
+  pacman: name=qt5-declarative state=present
+  tags: qt5-declarative
+  become: true
+
+- name: install qt5-quickcontrols 
+  pacman: name=qt5-quickcontrols state=present
+  tags: qt5-quickcontrols
+  become: true
+
+- name: install qt5-xmlpatterns 
   pacman: name=qt5-xmlpatterns state=present
   tags: qt5-xmlpatterns
   become: true
