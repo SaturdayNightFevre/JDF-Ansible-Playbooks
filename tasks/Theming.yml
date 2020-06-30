@@ -8,6 +8,9 @@
     mode: '3102'
     backup: yes
 
-#- name: install Theme Dark Moe
+#- name: install Theme Dark Moe - https://www.reddit.com/r/kde/comments/g7w11z/moe_moe_dark_themes/
+
+#- name: install MoeDark konsole theme cd .local/share/konsole/
+#- name: configure konsole theme  /home/john/.local/share/konsole/profile
 
 #- name: Insert Themes For KDE -  /home/john/.kde4/share/apps/color-schemes
