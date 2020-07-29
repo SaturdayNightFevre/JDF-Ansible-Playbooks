@@ -109,7 +109,7 @@
   become: true
 
 - name: install mailspring
-  pacman: name=mailspring state=present
+  pacman: name=mailspring state=absent
   tags: mailspring
   become: true
 
