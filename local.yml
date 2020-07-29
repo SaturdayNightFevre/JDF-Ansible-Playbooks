@@ -11,6 +11,7 @@
     changed_when: False
   
   tasks:
+   - include: tasks/users.yml
    - include: tasks/Laptop-changes.yml
    - include: tasks/Install-packages.yml
    - include: tasks/Uninstall-packages.yml
