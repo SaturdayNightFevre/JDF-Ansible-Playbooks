@@ -1,7 +1,7 @@
 #- name: Insert KDE Config File /home/john/.kde4/share/config
 - name: Copy a new "kdeglobals file into place, backing up the original if it differs from the copied version
   copy:
-    src: files/Themeing/kdeglobals
+    src: files/Manjaro/Themeing/kdeglobals
     dest: /home/john/.kde4/share/config/kdeglobals
     owner: john
     group: john
