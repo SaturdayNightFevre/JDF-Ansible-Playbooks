@@ -108,6 +108,11 @@
   tags: lib32-vulkan-intel
   become: true
 
+- name: install mailspring
+  pacman: name=mailspring state=present
+  tags: mailspring
+  become: true
+
 - name: install mesa-vdpau
   pacman: name=mesa-vdpau state=present
   tags: mesa-vdpau
