@@ -17,3 +17,4 @@
    - include: tasks/Uninstall-packages.yml
    - include: tasks/Theming.yml
    - include: tasks/Application-Configuration.yml
+   - include: tasks/cron.yml
