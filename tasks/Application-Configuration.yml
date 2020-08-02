@@ -3,6 +3,7 @@
     path: /etc/libinput-gestures.conf
     state: present
     backup: yes
+    create: yes
     insertafter: EOF
     validate: 
     marker: "#<!-- {mark} ANSIBLE MANAGED BLOCK -->"
