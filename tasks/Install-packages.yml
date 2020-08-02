@@ -183,6 +183,11 @@
   tags: papirus-icon-theme
   become: true
 
+- name: install pavucontrol
+  pacman: name=pavucontrol state=present
+  tags: pavucontrol
+  become: true
+
 - name: install qt5-base
   pacman: name=qt5-base state=present
   tags: qt5-base
