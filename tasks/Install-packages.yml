@@ -143,9 +143,9 @@
   tags: ocs-url
   become: true
 
-- name: install open-fuse-iso-term
-  pacman: name=open-fuse-iso-term state=present
-  tags: open-fuse-iso-term
+- name: install open-fuse-iso
+  pacman: name=open-fuse-iso state=present
+  tags: open-fuse-iso
   become: true
 
 - name: install oxygen
