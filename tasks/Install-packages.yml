@@ -143,10 +143,10 @@
   tags: ocs-url
   become: true
 
-- name: install open-fuse-iso
-  pacman: name=open-fuse-iso state=present
-  tags: open-fuse-iso
-  become: true
+#- name: install open-fuse-iso
+#  pacman: name=open-fuse-iso state=present
+#  tags: open-fuse-iso
+#  become: true
 
 - name: install oxygen
   pacman: name=oxygen state=present
