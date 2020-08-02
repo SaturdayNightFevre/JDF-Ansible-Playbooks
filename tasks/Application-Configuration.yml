@@ -6,7 +6,6 @@
     create: yes
     owner: root
     Group: root
-    Mode: 0440
     insertafter: EOF
     validate: 
     marker: "#<!-- {mark} ANSIBLE MANAGED BLOCK -->"
