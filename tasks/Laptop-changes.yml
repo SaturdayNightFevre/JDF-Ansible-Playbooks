@@ -22,6 +22,11 @@
   command: pacman-key --lsign-key 3056513887B78AEB
   changed_when: False
 
+- name: Create Chaotic-aur Database
+  become: yes
+  command: pacman -Sy
+  changed_when: False
+  
 - name: Enable Bluetooth fast connect
   become: yes
   lineinfile: 
@@ -78,4 +83,6 @@
       AllowHibernation=yes
       SuspendState=freeze mem standby
 
-#- name: Disabl exhci-wakeup
+#- name: Disable exhci-wakeup
+
+#- name: Pulseaudio - auto switch profile to HDMI  - https://unix.stackexchange.com/questions/462670/set-default-profile-for-pulseaudio
