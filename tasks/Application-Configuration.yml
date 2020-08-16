@@ -49,5 +49,4 @@
     state: restarted
     name: nextcloud
     daemon_reload: yes
-   become: yes 
-
+    become: yes 
