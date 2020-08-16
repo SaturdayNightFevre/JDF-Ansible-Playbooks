@@ -35,18 +35,18 @@
 - name: Nextcloud Configuration
   copy:
    src: files/nextcloud/nextcloud.cfg
-   dest: /~/.config/Nextcloud/
+   dest: /home/john/.config/Nextcloud/
    owner: root
    group: root
    mode: 0440
 
   copy:
    src: files/nextcloud/sync-exclude.lst
-   dest: /~/.config/Nextcloud/
+   dest: /home/john/.config/Nextcloud/
    owner: root
    group: root
    mode: 0440
-   
+
   systemd:
    state: restarted
    name: nextcloud
