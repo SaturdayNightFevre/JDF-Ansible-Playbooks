@@ -32,12 +32,22 @@
 
           device all
 
-#- name: Nexcloud Configuration
-#   copy:
-#    src: ./files/HomeConfig/Nextcloud/
-#    dest: ~/.config/
-#   systemd:
-#    state: restarted
-#    name: nextcloud
-#    daemon_reload: yes
-#   become: yes 
+- name: Nexcloud Configuration
+   copy:
+    src: files//nextcloud/nextcloud.cfg
+    dest: ~/.config/Nextcloud/
+    owner: root
+    group: root
+    mode: 0440
+  copy:
+    src: files/nextcloud/sync-exclude.lst
+    dest: ~/.config/Nextcloud/
+    owner: root
+    group: root
+    mode: 0440
+   systemd:
+    state: restarted
+    name: nextcloud
+    daemon_reload: yes
+   become: yes 
+
