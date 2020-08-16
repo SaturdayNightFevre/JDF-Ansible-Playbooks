@@ -34,7 +34,7 @@
 
 - name: Nextcloud Configuration
   copy:
-   src: files//nextcloud/nextcloud.cfg
+   src: files/nextcloud/nextcloud.cfg
    dest: ~/.config/Nextcloud/
    owner: root
    group: root
