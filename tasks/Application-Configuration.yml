@@ -39,12 +39,14 @@
    owner: root
    group: root
    mode: 0440
+
   copy:
    src: files/nextcloud/sync-exclude.lst
    dest: /~/.config/Nextcloud/
    owner: root
    group: root
    mode: 0440
+   
   systemd:
    state: restarted
    name: nextcloud
