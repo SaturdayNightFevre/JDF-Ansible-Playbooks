@@ -33,7 +33,7 @@
           device all
 
 - name: Nexcloud Configuration
-   copy:
+  copy:
     src: files//nextcloud/nextcloud.cfg
     dest: ~/.config/Nextcloud/
     owner: root
@@ -45,8 +45,8 @@
     owner: root
     group: root
     mode: 0440
-   systemd:
-    state: restarted
-    name: nextcloud
-    daemon_reload: yes
-    become: yes 
+  systemd:
+   state: restarted
+   name: nextcloud
+   daemon_reload: yes
+   become: yes 
