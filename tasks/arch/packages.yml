@@ -36,7 +36,7 @@
      - pamac-cli
      - pamac-gtk
      - pamac-snap-plugin
-     -  pamac-tray-appindicator
+     - pamac-tray-appindicator
      - papirus-icon-theme
      - pavucontrol
      - qt5-base

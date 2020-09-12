@@ -1,0 +1,45 @@
+- name: Install package repos - dnf
+  dnf:
+   name:
+        - https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+   state: latest
+
+- name: update-repos - dnf
+  dnf: 
+   update_cache: yes
+   update_only: yes
+
+- name: Install KDE Desktop
+  dnf:
+   enablerepo: epel,PowerTools
+   name:
+   - '@KDE Plasma Workspaces'
+   - '@base-x'
+   state: present
+
+- name: Start KDE
+  blockinfile:
+    path: /home/john/.xinitrc
+    state: present
+    backup: yes
+    create: yes
+    mode: 0664
+    insertafter: EOF
+    validate: 
+    marker: "#<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+    block: exec /usr/bin/startkde
+
+- name: Set Desktop Environment As Default
+  become: yes
+  command: systemctl set-default graphical.target
+
+
+
+- name: Set Desktop Environment As Default
+  become: yes
+  command: ll /etc/systemd/system/default.target
+  
+
+- name: enable SDDM
+  become: yes
+  command: systemctl enable sddm

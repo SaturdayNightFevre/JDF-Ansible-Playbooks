@@ -3,17 +3,34 @@
   become: true
 
   pre_tasks:
-
-  - name: update-repos
+  - name: update-repos - pacman
+    when: ansible_os_family == "Arch"
     pacman: 
      update_cache: yes
      upgrade: yes
     changed_when: False
-  
+
+  - name: update-repos - dnf
+    when: ansible_os_family == "RedHat"
+    dnf: 
+     update_cache: yes
+     update_only: yes
+    changed_when: False
+
   tasks:
    - include: tasks/users.yml
-   - include: tasks/Laptop-changes.yml
-   - include: tasks/packages.yml
+   - include: tasks/rhel/desktop-environment.yml
+     when: ansible_os_family == "RedHat"
+   - include: tasks/rhel/desktop-environment.yml
+     when: ansible_os_family == "Arch"
+   - include: tasks/arch/Laptop-changes.yml
+     when: ansible_os_family == "Arch"
+   - include: tasks/rhel/Laptop-changes.yml
+     when: ansible_os_family == "RedHat"
+   - include: tasks/arch/packages.yml
+     when: ansible_os_family == "Arch"
+   - include: tasks/rhel/packages.yml
+     when: ansible_os_family == "RedHat"
    - include: tasks/Theming.yml
    - include: tasks/Application-Configuration.yml
    - include: tasks/cron.yml
