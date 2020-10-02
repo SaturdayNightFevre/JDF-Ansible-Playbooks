@@ -17,13 +17,22 @@
      update_only: yes
     changed_when: False
 
+  - name: update-repos - apt
+    when: ansible_os_family == "Debian"
+    apt:
+     update_cache: yes
+     cache_valid_time: 3600
+    changed_when: False
+
   tasks:
 
    - debug:
       msg: "Machine {{ ansible_hostname }} is running {{ ansible_os_family }}"
-   - include: Archlinux.yml
+   - name: Include Tasks List Arch
+     include_tasks: Archlinux.yml
      when: ansible_os_family == "Archlinux"
-   - include: RedHat.yml
+   - include_tasks: RedHat.yml
      when: ansible_os_family == "RedHat"
-
+   - include_tasks: debian.yml
+     when: ansible_os_family == "Debian"
 
