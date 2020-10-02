@@ -1,0 +1,8 @@
+  tasks:
+   - include: tasks/users.yml
+   - include: tasks/rhel/desktop-environment.yml
+   - include: tasks/arch/Laptop-changes.yml
+   - include: tasks/arch/packages.yml
+   - include: tasks/Theming.yml
+   - include: tasks/Application-Configuration.yml
+   - include: tasks/cron.yml

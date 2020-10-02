@@ -4,7 +4,7 @@
 
   pre_tasks:
   - name: update-repos - pacman
-    when: ansible_os_family == "Arch"
+    when: ansible_os_family == "Archlinux"
     pacman: 
      update_cache: yes
      upgrade: yes
@@ -18,19 +18,12 @@
     changed_when: False
 
   tasks:
-   - include: tasks/users.yml
-   - include: tasks/rhel/desktop-environment.yml
+
+   - debug:
+      msg: "Machine {{ ansible_hostname }} is running {{ ansible_os_family }}"
+   - include: Archlinux.yml
+     when: ansible_os_family == "Archlinux"
+   - include: RedHat.yml
      when: ansible_os_family == "RedHat"
-   - include: tasks/rhel/desktop-environment.yml
-     when: ansible_os_family == "Arch"
-   - include: tasks/arch/Laptop-changes.yml
-     when: ansible_os_family == "Arch"
-   - include: tasks/rhel/Laptop-changes.yml
-     when: ansible_os_family == "RedHat"
-   - include: tasks/arch/packages.yml
-     when: ansible_os_family == "Arch"
-   - include: tasks/rhel/packages.yml
-     when: ansible_os_family == "RedHat"
-   - include: tasks/Theming.yml
-   - include: tasks/Application-Configuration.yml
-   - include: tasks/cron.yml
+
+
