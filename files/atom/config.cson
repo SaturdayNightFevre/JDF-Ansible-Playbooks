@@ -1,0 +1,16 @@
+"*":
+  core:
+    autoHideMenuBar: true
+    telemetryConsent: "no"
+    themes: [
+      "seti-ui"
+      "br4ckets-dark"
+    ]
+  editor:
+    showInvisibles: true
+  "exception-reporting":
+    userId: "df2ae023-653b-4e81-9212-962492df6e73"
+  "seti-ui":
+    hideProjectTab: true
+    hideTitleBar: true
+    themeColor: "Orange"

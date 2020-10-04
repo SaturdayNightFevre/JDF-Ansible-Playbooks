@@ -2,30 +2,30 @@
 - name: Install package's - Pacman
   pacman:
     name:
+     - atom
      - apparmor
      - aws-cli
      - bauh
      - bind-tools
-     - cantata
+     - bitwarden
      - chromium
      - clamav
      - clamtk
      - code
      - docker
+     - firefox
+     - firefox-extension-bitwarden
      - filezilla
      - freerdp
      - gimp
      - gtop
      - hamsket-git
      - joplin
-     - khotkeys
-     - kvantum-qt5
      - latte-dock
      - lib32-mesa-vdpau
      - lib32-vulkan-icd-loader
      - lib32-vulkan-intel
      - mailspring
-     - mesa-vdpau
      - nextcloud-client
      - noto-fonts-cjk
      - npm
@@ -39,11 +39,6 @@
      - pamac-tray-appindicator
      - papirus-icon-theme
      - pavucontrol
-     - qt5-base
-     - qt5-svg
-     - qt5-declarative
-     - qt5-quickcontrols
-     - qt5-xmlpatterns
      - qbittorrent
      - remmina
      - scribus
@@ -56,15 +51,11 @@
      - ttf-ms-fonts
      - virtualbox
      - vlc
-     - vulkan-intel
      - wallpapers-juhraya
      - wine
      - xautomation
      - xbindkeys
      - xclip
-     - xdg-desktop-portal
-     - xdg-desktop-portal-kde
-     - xf86-video-intel
      - xz
      - zip
     state: present

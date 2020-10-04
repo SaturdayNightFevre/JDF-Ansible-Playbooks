@@ -8,19 +8,31 @@
     marker: "#<!-- {mark} ANSIBLE MANAGED BLOCK -->"
     block: |
       [chaotic-aur]
-      Server = http://lonewolf-builder.duckdns.org/$repo/x86_64
-      Server = http://chaotic.bangl.de/$repo/x86_64
-      Server = https://repo.kitsuna.net/x86_64
+      # Brazil
+      Server = https://lonewolf.pedrohlc.com/$repo/$arch
+      # USA
+      Server = https://builds.garudalinux.org/repos/$repo/$arch
+      Server = https://repo.kitsuna.net/$arch
+      # Netherlands
+      Server = https://chaotic.tn.dedyn.io/$arch
+      # Germany
+      Server = http://chaotic.bangl.de/$repo/$arch
 
 - name: Add Chaotic Key Mozilla
   become: yes
-  command: pacman-key --keyserver keys.mozilla.org -r 3056513887B78AEB 
+  command: pacman-key --keyserver hkp://keyserver.ubuntu.com -r 3056513887B78AEB 8A9E14A07010F7E3 
   changed_when: False
 
 - name: Add Chaotic Key Lsign
   become: yes
   command: pacman-key --lsign-key 3056513887B78AEB
   changed_when: False
+
+- name: Add Chaotic Key Lsign x2
+  become: yes
+  command: pacman-key --lsign-key 8A9E14A07010F7E3 
+  changed_when: False
+
 
 - name: Create Chaotic-aur Database
   become: yes

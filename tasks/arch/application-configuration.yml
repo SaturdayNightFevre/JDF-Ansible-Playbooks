@@ -8,7 +8,7 @@
     group: root
     mode: 0440
     insertafter: EOF
-    validate: 
+    validate:
     marker: "#<!-- {mark} ANSIBLE MANAGED BLOCK -->"
     block: |
           # show open apps
@@ -34,16 +34,41 @@
 
 - name: Nextcloud Configuration
   copy:
-   src: files/nextcloud/nextcloud.cfg
+   src:  ../../files/nextcloud/nextcloud.cfg
    dest: /home/john/.config/Nextcloud/
-   owner: root
-   group: root
-   mode: 0440
+   owner: john
+   group: john
+   mode: 0644
 
   copy:
-   src: files/nextcloud/sync-exclude.lst
+   src: ../../files/nextcloud/sync-exclude.lst
    dest: /home/john/.config/Nextcloud/
-   owner: root
-   group: root
-   mode: 0440
+   owner: john
+   group: john
+   mode: 0644
  # Need to work out how to restart nextcloud
+
+- name: Atom install packages
+  become: true
+  become_user: john
+  command: apm install br4ckets-dark
+  changed_when: False
+
+- name: Atom create config file
+  copy:
+   src: ../../files/atom/config.cson
+   dest: /home/john/.atom/config.cson
+   owner: john
+   group: john
+   mode: 0644
+   backup: yes
+   state: present
+
+- name: Bitwarden create config file
+  copy:
+   src: ../../files/bitwarden/data.json
+   dest: /home/john/.config/Bitwarden/data.json
+   owner: john
+   group: john
+   mode: 0644
+   backup: yes

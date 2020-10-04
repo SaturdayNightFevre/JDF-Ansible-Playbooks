@@ -1,0 +1,14 @@
+  - name: Include users
+    include: tasks/users.yml
+
+  - name: Make Changes Specific to xps13 #need to make it see when it is the xps13
+    include: tasks/arch/laptop-changes.yml
+
+  - name: Install packages
+    include: tasks/arch/packages.yml
+
+  - name: Install cron task to rerun ansible whenever changes are made to the script
+    include: tasks/cron.yml
+
+  - name: Make configuration changes to applications
+    include: tasks/arch/application-configuration.yml
