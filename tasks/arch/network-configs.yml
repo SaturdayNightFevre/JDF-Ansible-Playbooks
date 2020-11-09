@@ -1,0 +1,9 @@
+- name: Create Johnflix vpn connection
+  copy:
+   src: ../../files/networks/vpns/Johnflix.nmconnection
+   dest: /etc/NetworkManager/system-connections/Johnflix.nmconnection
+   owner: root
+   group: root
+   mode: 0600
+   backup: yes
+   state: present
