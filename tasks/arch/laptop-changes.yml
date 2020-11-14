@@ -4,7 +4,7 @@
     state: present
     backup: yes
     insertafter: EOF
-    validate: 
+    validate:
     marker: "#<!-- {mark} ANSIBLE MANAGED BLOCK -->"
     block: |
       [chaotic-aur]
@@ -20,7 +20,7 @@
 
 - name: Add Chaotic Key Mozilla
   become: yes
-  command: pacman-key --keyserver hkp://keyserver.ubuntu.com -r 3056513887B78AEB 8A9E14A07010F7E3 
+  command: pacman-key --keyserver hkp://keyserver.ubuntu.com -r 3056513887B78AEB 8A9E14A07010F7E3
   changed_when: False
 
 - name: Add Chaotic Key Lsign
@@ -30,7 +30,7 @@
 
 - name: Add Chaotic Key Lsign x2
   become: yes
-  command: pacman-key --lsign-key 8A9E14A07010F7E3 
+  command: pacman-key --lsign-key 8A9E14A07010F7E3
   changed_when: False
 
 
@@ -38,19 +38,44 @@
   become: yes
   command: pacman -Sy
   changed_when: False
-  
+
 - name: Enable Bluetooth fast connect
   become: yes
-  lineinfile: 
+  lineinfile:
    path: /etc/bluetooth/main.conf
    regex: FastConnectable =
    line: FastConnectable = true
    state: present
    backup: yes
 
+- name: create service to Phantom wake from sleep
+  become: yes
+  blockinfile:
+   create: yes
+   marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+   path: /etc/systemd/system/mouse-wakeup.service
+   state: present
+   backup: yes
+   block: |
+    [Unit]
+    Description=Disables device XHC from being able wake device from sleep
+
+    [Service]
+    ExecStart=/bin/bash -c " echo XHC >> /proc/acpi/wakeup"
+
+    [Install]
+    WantedBy=multi-user.target
+
+- name: Enable service to stop Phantom wakes from sleep
+  become: yes
+  command: sudo systemctl enable mouse-wakeup.service
+  changed_when: False
+
+
+
 - name: Setup Auto SSH
   become: yes
-  blockinfile: 
+  blockinfile:
    path: ~/.bash_profile
    state: present
    insertafter: EOF
@@ -69,7 +94,7 @@
     }
 
     # Source SSH settings, if applicable
-      
+
     if [ -f "${SSH_ENV}" ]; then
     . "${SSH_ENV}" > /dev/null
     #ps ${SSH_AGENT_PID} doesn't work under cywgin
@@ -87,7 +112,7 @@
     state: present
     backup: yes
     insertafter: EOF
-    validate: 
+    validate:
     marker: "#<!-- {mark} ANSIBLE MANAGED BLOCK -->"
     block: |
       [Sleep]
