@@ -68,7 +68,7 @@
 
 - name: Enable service to stop Phantom wakes from sleep
   become: yes
-  command: sudo systemctl enable mouse-wakeup.service
+  command: systemctl enable mouse-wakeup.service
   changed_when: False
 
 

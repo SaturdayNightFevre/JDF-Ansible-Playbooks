@@ -1,4 +1,10 @@
 "*":
+  "atom-beautify":
+    general:
+      beautifyEntireFileOnSave: false
+    yaml:
+      disabled: true
+
   core:
     autoHideMenuBar: true
     telemetryConsent: "no"

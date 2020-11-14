@@ -1,8 +1,9 @@
   - name: Include users
     include: tasks/users.yml
 
-  - name: Make Changes Specific to xps13 #need to make it see when it is the xps13
-    include: tasks/arch/laptop-changes.yml
+  - name: Make Changes Specific to xps13
+    when: ansible_board_name == "0839Y6"
+    include: tasks/arch/xps-13-changes.yml
 
   - name: Configure Wireless & VPN networks
     include: tasks/arch/network-configs.yml

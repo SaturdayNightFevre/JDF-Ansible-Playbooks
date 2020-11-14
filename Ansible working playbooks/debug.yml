@@ -4,5 +4,9 @@
       debug:
         msg: "System {{ ansible_hostname }} is running the os {{ ansible_os_family }}"
 
+    - name: OS_Computer details
+      debug:
+        msg: "This Computer is Made by {{ ansible_board_vendor }} is running the board {{ ansible_board_name }}"
+
     #- name: All ansible Variables
     #  debug: var=ansible_facts
