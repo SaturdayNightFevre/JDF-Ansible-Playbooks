@@ -11,7 +11,6 @@
      - chromium
      - clamav
      - clamtk
-     - code
      - docker
      - firefox
      - firefox-extension-bitwarden
@@ -45,7 +44,6 @@
      - sddm-breath2-theme
      - steam
      - spotify
-     - tcsd
      - terraform
      - timeshift
      - traceroute
@@ -68,4 +66,5 @@
     name:
      - octopi
      - zoom
+     - code
     state: absent

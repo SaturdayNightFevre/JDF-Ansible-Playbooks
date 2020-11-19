@@ -48,7 +48,7 @@
    state: present
    backup: yes
 
-- name: create service to Phantom wake from sleep
+- name: create service to stop Phantom wake from sleep
   become: yes
   blockinfile:
    create: yes
@@ -120,6 +120,5 @@
       AllowHibernation=yes
       SuspendState=freeze mem standby
 
-#- name: Disable exhci-wakeup
 
 #- name: Pulseaudio - auto switch profile to HDMI  - https://unix.stackexchange.com/questions/462670/set-default-profile-for-pulseaudio

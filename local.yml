@@ -3,16 +3,21 @@
   become: true
 
   pre_tasks:
+  - name: install requirements
+    become: yes
+    command: ansible-galaxy install -r requirements.yml
+    changed_when: False
+
   - name: update-repos - pacman
     when: ansible_os_family == "Archlinux"
-    pacman: 
+    pacman:
      update_cache: yes
      upgrade: yes
     changed_when: False
 
   - name: update-repos - dnf
     when: ansible_os_family == "RedHat"
-    dnf: 
+    dnf:
      update_cache: yes
      update_only: yes
     changed_when: False
@@ -35,4 +40,3 @@
      when: ansible_os_family == "RedHat"
    - include_tasks: debian.yml
      when: ansible_os_family == "Debian"
-

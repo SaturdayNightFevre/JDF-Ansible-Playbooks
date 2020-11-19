@@ -20,3 +20,5 @@
     hideProjectTab: true
     hideTitleBar: true
     themeColor: "Orange"
+  welcome:
+    showOnStartup: false
