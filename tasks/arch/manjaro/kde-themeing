@@ -1,0 +1,9 @@
+- name: Download JF logo
+  become: no
+  command: https://nextcloud.johnflix.uk/apps/theming/image/logo > /home/john/log.png
+  changed_when: False
+
+-name: Resize JF logo
+  roles:
+   - { role: Jooho.image-resize }
+   #- { role: Jooho.image-resize, input_img: "original-image.png", output_img: "resize-image.png", size: "193x44", overwrite_force: "true" }

@@ -62,7 +62,7 @@
    group: john
    mode: 0644
    backup: yes
-   state: present
+
 
 - name: add bitwarden environment variables
   blockinfile:
@@ -81,6 +81,3 @@
          		"events": null,
          		"enterprise": null
          	},'
-
-\n\n    foo: \"bad\" \"wolf\"\n\n
-\n\n    foo: '\"bad\" \"wolf\"'\n"

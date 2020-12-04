@@ -120,5 +120,13 @@
       AllowHibernation=yes
       SuspendState=freeze mem standby
 
-
+- name: Enable Firefox Touchscreen gestures
+  become: yes
+  lineinfile:
+   path: /etc/security/pam_env.conf
+   regex: MOZ_USE_XINPUT2
+   line: MOZ_USE_XINPUT2 DEFAULT=1
+   state: present
+   backup: yes
+   
 #- name: Pulseaudio - auto switch profile to HDMI  - https://unix.stackexchange.com/questions/462670/set-default-profile-for-pulseaudio
