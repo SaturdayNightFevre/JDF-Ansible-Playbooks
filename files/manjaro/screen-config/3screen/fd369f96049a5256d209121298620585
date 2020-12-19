@@ -1,0 +1,68 @@
+[
+    {
+        "enabled": true,
+        "id": "3627c3534e4c82871967b57237bf5b83",
+        "metadata": {
+            "fullname": "xrandr-Sharp Corporation",
+            "name": "eDP1"
+        },
+        "mode": {
+            "refresh": 59.98658752441406,
+            "size": {
+                "height": 1440,
+                "width": 2560
+            }
+        },
+        "pos": {
+            "x": 1080,
+            "y": 1080
+        },
+        "primary": true,
+        "rotation": 1,
+        "scale": 1
+    },
+    {
+        "enabled": true,
+        "id": "906643e97631a2d0bba3e550ec53cffb",
+        "metadata": {
+            "fullname": "xrandr-Goldstar Company Ltd-LG HDR WFHD-95395",
+            "name": "DP1-1"
+        },
+        "mode": {
+            "refresh": 59.978424072265625,
+            "size": {
+                "height": 1080,
+                "width": 2560
+            }
+        },
+        "pos": {
+            "x": 1079,
+            "y": 0
+        },
+        "primary": false,
+        "rotation": 1,
+        "scale": 1
+    },
+    {
+        "enabled": true,
+        "id": "e4c044997da5e145e79231e4d105edb4",
+        "metadata": {
+            "fullname": "xrandr-Lenovo Group Limited-C24-25-U7609178",
+            "name": "DP1-3"
+        },
+        "mode": {
+            "refresh": 60,
+            "size": {
+                "height": 1080,
+                "width": 1920
+            }
+        },
+        "pos": {
+            "x": 0,
+            "y": 0
+        },
+        "primary": false,
+        "rotation": 2,
+        "scale": 1
+    }
+]

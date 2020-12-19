@@ -51,7 +51,7 @@
 - name: Atom install packages
   become: true
   become_user: john
-  command: apm install br4ckets-dark atom-beautify
+  command: apm install atom-beautify
   changed_when: False
 
 - name: Atom create config file
@@ -64,20 +64,20 @@
    backup: yes
 
 
-- name: add bitwarden environment variables
-  blockinfile:
-   path: /home/john/.config/Bitwarden/data.json
-   state: present
-   insertafter: '"installedVersion": "******",'
-   marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
-   block: |
-         '	"environmentUrls": {
-         		"base": "https://bitwarden.johnflix.uk",
-         		"api": null,
-         		"identity": null,
-         		"webVault": null,
-         		"icons": null,
-         		"notifications": null,
-         		"events": null,
-         		"enterprise": null
-         	},'
+#- name: add bitwarden environment variables
+#  blockinfile:
+#   path: /home/john/.config/Bitwarden/data.json
+#   state: present
+#   insertafter: '"installedVersion": '
+#   marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+#   block: |
+#         	"environmentUrls": {
+#         		"base": "https://bitwarden.johnflix.uk",
+#         		"api": null,
+#         		"identity": null,
+#         		"webVault": null,
+#         		"icons": null,
+#         		"notifications": null,
+#         		"events": null,
+#         		"enterprise": null
+#         	}
