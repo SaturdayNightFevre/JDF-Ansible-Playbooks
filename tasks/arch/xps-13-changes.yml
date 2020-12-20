@@ -1,7 +1,7 @@
 - name: Insert chaotic-aur into pacman conf
   blockinfile:
     path: /etc/pacman.conf
-    state: present
+    state: absent
     backup: yes
     insertafter: EOF
     validate:
@@ -128,5 +128,5 @@
    line: MOZ_USE_XINPUT2 DEFAULT=1
    state: present
    backup: yes
-   
+
 #- name: Pulseaudio - auto switch profile to HDMI  - https://unix.stackexchange.com/questions/462670/set-default-profile-for-pulseaudio
