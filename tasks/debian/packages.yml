@@ -86,6 +86,7 @@
       - docker.io
       - awscli
       - jq
+      - npm
     state: present
     update_cache: yes
 
@@ -94,3 +95,7 @@
     name:
       - bitwarden
     state: present
+
+- name: set python 3 to the default
+  become: yes
+  command: sudo update-alternatives --install /usr/bin/python python /usr/bin/python"{{ ansible_python_version }}" && sudo update-alternatives --config python

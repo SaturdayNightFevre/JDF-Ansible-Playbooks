@@ -13,5 +13,5 @@
   - name: Install Programs
     include: tasks/debian/packages.yml
 
-  - name: Install cron task to rerun ansible whenever changes are made to the script
+  - name: Install cron task to rerun ansible whenever changes are made to the script # need to run sudo ansible-pull -U https://github.com/<github_user>/ansible.git to initiate 
     include: tasks/cron.yml
