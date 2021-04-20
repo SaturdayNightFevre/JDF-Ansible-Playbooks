@@ -85,6 +85,7 @@
       - latte-dock
       - docker.io
       - awscli
+      - jq
     state: present
     update_cache: yes
 
