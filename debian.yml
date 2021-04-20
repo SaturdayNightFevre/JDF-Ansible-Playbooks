@@ -1,3 +1,17 @@
   - name: Include users
     include: tasks/users.yml
 
+  - name: Make Changes Specific to xps13
+    when: ansible_board_name == "0839Y6"
+    include: tasks/debian/xps-13-changes.yml
+    ignore_errors: true
+
+  - name: Make Changes Specific to Desktop
+    when: ansible_product_name == "MS-7C36"
+    include: tasks/debian/desktop-changes.yml
+
+  - name: Install Programs
+    include: tasks/debian/packages.yml
+
+  - name: Install cron task to rerun ansible whenever changes are made to the script
+    include: tasks/cron.yml

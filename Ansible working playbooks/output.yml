@@ -1,0 +1,1077 @@
+
+PLAY [localhost] *************************************************************************************
+
+TASK [Gathering Facts] *******************************************************************************
+ok: [localhost]
+
+TASK [OS_family details] *****************************************************************************
+ok: [localhost] => {
+    "msg": "System john-desktop is running the os Debian"
+}
+
+TASK [All ansible Variables] *************************************************************************
+ok: [localhost] => {
+    "ansible_facts": {
+        "_facts_gathered": true,
+        "all_ipv4_addresses": [
+            "192.168.69.18",
+            "192.168.69.23"
+        ],
+        "all_ipv6_addresses": [
+            "fe80::20b9:5b6:96ba:5936",
+            "fe80::96ec:3917:5ac:8229"
+        ],
+        "ansible_local": {},
+        "apparmor": {
+            "status": "enabled"
+        },
+        "architecture": "x86_64",
+        "bios_date": "12/30/2020",
+        "bios_version": "1.C3",
+        "cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-5.8.0-48-generic",
+            "quiet": true,
+            "ro": true,
+            "root": "/dev/mapper/vgkubuntu-root",
+            "splash": true,
+            "vt.handoff": "7"
+        },
+        "date_time": {
+            "date": "2021-04-11",
+            "day": "11",
+            "epoch": "1618097039",
+            "hour": "00",
+            "iso8601": "2021-04-10T23:23:59Z",
+            "iso8601_basic": "20210411T002359136288",
+            "iso8601_basic_short": "20210411T002359",
+            "iso8601_micro": "2021-04-10T23:23:59.136363Z",
+            "minute": "23",
+            "month": "04",
+            "second": "59",
+            "time": "00:23:59",
+            "tz": "BST",
+            "tz_offset": "+0100",
+            "weekday": "Sunday",
+            "weekday_number": "0",
+            "weeknumber": "14",
+            "year": "2021"
+        },
+        "default_ipv4": {
+            "address": "192.168.69.18",
+            "alias": "enp43s0",
+            "broadcast": "192.168.69.255",
+            "gateway": "192.168.69.1",
+            "interface": "enp43s0",
+            "macaddress": "00:d8:61:c5:69:f4",
+            "mtu": 1500,
+            "netmask": "255.255.255.0",
+            "network": "192.168.69.0",
+            "type": "ether"
+        },
+        "default_ipv6": {},
+        "device_links": {
+            "ids": {
+                "dm-0": [
+                    "dm-name-nvme0n1p6_crypt",
+                    "dm-uuid-CRYPT-LUKS2-a5c01ca25ca84ee48d4068ec73255392-nvme0n1p6_crypt",
+                    "lvm-pv-uuid-wzTMs4-nOE0-UdoW-xb1L-eVVK-eg0T-LVZCJ4"
+                ],
+                "dm-1": [
+                    "dm-name-vgkubuntu-root",
+                    "dm-uuid-LVM-GNK0ixsYuzxs0lO7Qo8M3SP0SyFPlkLJxVo16bRN1acR9Pr1dMPVDkrHBFPfA2XO"
+                ],
+                "dm-2": [
+                    "dm-name-vgkubuntu-swap_1",
+                    "dm-uuid-LVM-GNK0ixsYuzxs0lO7Qo8M3SP0SyFPlkLJPvdWBpJ4dTp14A1SdfPtalgheL2Y62Yu"
+                ],
+                "nvme0n1": [
+                    "nvme-WDC_WDS100T2B0C-00PXH0_2052DE477109",
+                    "nvme-eui.e8238fa6bf530001001b444a46a5a8ee"
+                ],
+                "nvme0n1p1": [
+                    "nvme-WDC_WDS100T2B0C-00PXH0_2052DE477109-part1",
+                    "nvme-eui.e8238fa6bf530001001b444a46a5a8ee-part1"
+                ],
+                "nvme0n1p2": [
+                    "nvme-WDC_WDS100T2B0C-00PXH0_2052DE477109-part2",
+                    "nvme-eui.e8238fa6bf530001001b444a46a5a8ee-part2"
+                ],
+                "nvme0n1p5": [
+                    "nvme-WDC_WDS100T2B0C-00PXH0_2052DE477109-part5",
+                    "nvme-eui.e8238fa6bf530001001b444a46a5a8ee-part5"
+                ],
+                "nvme0n1p6": [
+                    "nvme-WDC_WDS100T2B0C-00PXH0_2052DE477109-part6",
+                    "nvme-eui.e8238fa6bf530001001b444a46a5a8ee-part6"
+                ],
+                "nvme1n1": [
+                    "nvme-WDC_WDS100T2B0C-00PXH0_2052DE480907",
+                    "nvme-eui.e8238fa6bf530001001b444a46a5a5ac"
+                ],
+                "nvme1n1p1": [
+                    "nvme-WDC_WDS100T2B0C-00PXH0_2052DE480907-part1",
+                    "nvme-eui.e8238fa6bf530001001b444a46a5a5ac-part1"
+                ],
+                "sda": [
+                    "ata-WDC_WD60EMAZ-11LW3B0_WD-WX72D600NY14",
+                    "wwn-0x50014ee212fbbe8e"
+                ],
+                "sda1": [
+                    "ata-WDC_WD60EMAZ-11LW3B0_WD-WX72D600NY14-part1",
+                    "wwn-0x50014ee212fbbe8e-part1"
+                ],
+                "sdb": [
+                    "usb-WD_My_Passport_0820_5758363141363444364A4A4B-0:0"
+                ],
+                "sdb1": [
+                    "usb-WD_My_Passport_0820_5758363141363444364A4A4B-0:0-part1"
+                ]
+            },
+            "labels": {
+                "sdb1": [
+                    "1TB\\x20USB"
+                ]
+            },
+            "masters": {
+                "dm-0": [
+                    "dm-1",
+                    "dm-2"
+                ],
+                "nvme0n1p6": [
+                    "dm-0"
+                ]
+            },
+            "uuids": {
+                "dm-1": [
+                    "599204e5-7e45-44df-bd36-49012ab39fc4"
+                ],
+                "dm-2": [
+                    "baba6651-48e1-426a-8c93-3dc4a9b779e0"
+                ],
+                "nvme0n1p1": [
+                    "564E-3367"
+                ],
+                "nvme0n1p5": [
+                    "9e7015bb-58ed-4abd-afa6-756b74880575"
+                ],
+                "nvme0n1p6": [
+                    "a5c01ca2-5ca8-4ee4-8d40-68ec73255392"
+                ],
+                "nvme1n1p1": [
+                    "604e8e20-a638-44fe-bfca-191eefff34b8"
+                ],
+                "sda1": [
+                    "4682bf2c-d7c8-4fec-9c22-2d272376d780"
+                ],
+                "sdb1": [
+                    "35FA2961077AED04"
+                ]
+            }
+        },
+        "devices": {
+            "dm-0": {
+                "holders": [
+                    "vgkubuntu-root",
+                    "vgkubuntu-swap_1"
+                ],
+                "host": "",
+                "links": {
+                    "ids": [
+                        "dm-name-nvme0n1p6_crypt",
+                        "dm-uuid-CRYPT-LUKS2-a5c01ca25ca84ee48d4068ec73255392-nvme0n1p6_crypt",
+                        "lvm-pv-uuid-wzTMs4-nOE0-UdoW-xb1L-eVVK-eg0T-LVZCJ4"
+                    ],
+                    "labels": [],
+                    "masters": [
+                        "dm-1",
+                        "dm-2"
+                    ],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "",
+                "sectors": "1950939136",
+                "sectorsize": "512",
+                "size": "930.28 GB",
+                "support_discard": "512",
+                "vendor": null,
+                "virtual": 1
+            },
+            "dm-1": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [
+                        "dm-name-vgkubuntu-root",
+                        "dm-uuid-LVM-GNK0ixsYuzxs0lO7Qo8M3SP0SyFPlkLJxVo16bRN1acR9Pr1dMPVDkrHBFPfA2XO"
+                    ],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": [
+                        "599204e5-7e45-44df-bd36-49012ab39fc4"
+                    ]
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "",
+                "sectors": "1948934144",
+                "sectorsize": "512",
+                "size": "929.32 GB",
+                "support_discard": "512",
+                "vendor": null,
+                "virtual": 1
+            },
+            "dm-2": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [
+                        "dm-name-vgkubuntu-swap_1",
+                        "dm-uuid-LVM-GNK0ixsYuzxs0lO7Qo8M3SP0SyFPlkLJPvdWBpJ4dTp14A1SdfPtalgheL2Y62Yu"
+                    ],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": [
+                        "baba6651-48e1-426a-8c93-3dc4a9b779e0"
+                    ]
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "",
+                "sectors": "1998848",
+                "sectorsize": "512",
+                "size": "976.00 MB",
+                "support_discard": "512",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop0": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "0",
+                "sectorsize": "512",
+                "size": "0.00 Bytes",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop1": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "0",
+                "sectorsize": "512",
+                "size": "0.00 Bytes",
+                "support_discard": "0",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop2": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "0",
+                "sectorsize": "512",
+                "size": "0.00 Bytes",
+                "support_discard": "0",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop3": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "0",
+                "sectorsize": "512",
+                "size": "0.00 Bytes",
+                "support_discard": "0",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop4": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "0",
+                "sectorsize": "512",
+                "size": "0.00 Bytes",
+                "support_discard": "0",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop5": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "0",
+                "sectorsize": "512",
+                "size": "0.00 Bytes",
+                "support_discard": "0",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop6": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "0",
+                "sectorsize": "512",
+                "size": "0.00 Bytes",
+                "support_discard": "0",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop7": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "0",
+                "sectorsize": "512",
+                "size": "0.00 Bytes",
+                "support_discard": "0",
+                "vendor": null,
+                "virtual": 1
+            },
+            "nvme0n1": {
+                "holders": [],
+                "host": "Non-Volatile memory controller: Sandisk Corp Device 5009 (rev 01)",
+                "links": {
+                    "ids": [
+                        "nvme-WDC_WDS100T2B0C-00PXH0_2052DE477109",
+                        "nvme-eui.e8238fa6bf530001001b444a46a5a8ee"
+                    ],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": "WDC WDS100T2B0C-00PXH0",
+                "partitions": {
+                    "nvme0n1p1": {
+                        "holders": [],
+                        "links": {
+                            "ids": [
+                                "nvme-WDC_WDS100T2B0C-00PXH0_2052DE477109-part1",
+                                "nvme-eui.e8238fa6bf530001001b444a46a5a8ee-part1"
+                            ],
+                            "labels": [],
+                            "masters": [],
+                            "uuids": [
+                                "564E-3367"
+                            ]
+                        },
+                        "sectors": "1048576",
+                        "sectorsize": 512,
+                        "size": "512.00 MB",
+                        "start": "2048",
+                        "uuid": "564E-3367"
+                    },
+                    "nvme0n1p2": {
+                        "holders": [],
+                        "links": {
+                            "ids": [
+                                "nvme-WDC_WDS100T2B0C-00PXH0_2052DE477109-part2",
+                                "nvme-eui.e8238fa6bf530001001b444a46a5a8ee-part2"
+                            ],
+                            "labels": [],
+                            "masters": [],
+                            "uuids": []
+                        },
+                        "sectors": "2",
+                        "sectorsize": 512,
+                        "size": "1.00 KB",
+                        "start": "1052670",
+                        "uuid": null
+                    },
+                    "nvme0n1p5": {
+                        "holders": [],
+                        "links": {
+                            "ids": [
+                                "nvme-WDC_WDS100T2B0C-00PXH0_2052DE477109-part5",
+                                "nvme-eui.e8238fa6bf530001001b444a46a5a8ee-part5"
+                            ],
+                            "labels": [],
+                            "masters": [],
+                            "uuids": [
+                                "9e7015bb-58ed-4abd-afa6-756b74880575"
+                            ]
+                        },
+                        "sectors": "1497088",
+                        "sectorsize": 512,
+                        "size": "731.00 MB",
+                        "start": "1052672",
+                        "uuid": "9e7015bb-58ed-4abd-afa6-756b74880575"
+                    },
+                    "nvme0n1p6": {
+                        "holders": [
+                            "nvme0n1p6_crypt"
+                        ],
+                        "links": {
+                            "ids": [
+                                "nvme-WDC_WDS100T2B0C-00PXH0_2052DE477109-part6",
+                                "nvme-eui.e8238fa6bf530001001b444a46a5a8ee-part6"
+                            ],
+                            "labels": [],
+                            "masters": [
+                                "dm-0"
+                            ],
+                            "uuids": [
+                                "a5c01ca2-5ca8-4ee4-8d40-68ec73255392"
+                            ]
+                        },
+                        "sectors": "1950971904",
+                        "sectorsize": 512,
+                        "size": "930.30 GB",
+                        "start": "2551808",
+                        "uuid": "a5c01ca2-5ca8-4ee4-8d40-68ec73255392"
+                    }
+                },
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "1953525168",
+                "sectorsize": "512",
+                "size": "931.51 GB",
+                "support_discard": "512",
+                "vendor": null,
+                "virtual": 1
+            },
+            "nvme1n1": {
+                "holders": [],
+                "host": "Non-Volatile memory controller: Sandisk Corp Device 5009 (rev 01)",
+                "links": {
+                    "ids": [
+                        "nvme-WDC_WDS100T2B0C-00PXH0_2052DE480907",
+                        "nvme-eui.e8238fa6bf530001001b444a46a5a5ac"
+                    ],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": "WDC WDS100T2B0C-00PXH0",
+                "partitions": {
+                    "nvme1n1p1": {
+                        "holders": [],
+                        "links": {
+                            "ids": [
+                                "nvme-WDC_WDS100T2B0C-00PXH0_2052DE480907-part1",
+                                "nvme-eui.e8238fa6bf530001001b444a46a5a5ac-part1"
+                            ],
+                            "labels": [],
+                            "masters": [],
+                            "uuids": [
+                                "604e8e20-a638-44fe-bfca-191eefff34b8"
+                            ]
+                        },
+                        "sectors": "1953523120",
+                        "sectorsize": 512,
+                        "size": "931.51 GB",
+                        "start": "2048",
+                        "uuid": "604e8e20-a638-44fe-bfca-191eefff34b8"
+                    }
+                },
+                "removable": "0",
+                "rotational": "0",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "none",
+                "sectors": "1953525168",
+                "sectorsize": "512",
+                "size": "931.51 GB",
+                "support_discard": "512",
+                "vendor": null,
+                "virtual": 1
+            },
+            "sda": {
+                "holders": [],
+                "host": "SATA controller: Advanced Micro Devices, Inc. [AMD] FCH SATA Controller [AHCI mode] (rev 51)",
+                "links": {
+                    "ids": [
+                        "ata-WDC_WD60EMAZ-11LW3B0_WD-WX72D600NY14",
+                        "wwn-0x50014ee212fbbe8e"
+                    ],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": "WDC WD60EMAZ-11L",
+                "partitions": {
+                    "sda1": {
+                        "holders": [],
+                        "links": {
+                            "ids": [
+                                "ata-WDC_WD60EMAZ-11LW3B0_WD-WX72D600NY14-part1",
+                                "wwn-0x50014ee212fbbe8e-part1"
+                            ],
+                            "labels": [],
+                            "masters": [],
+                            "uuids": [
+                                "4682bf2c-d7c8-4fec-9c22-2d272376d780"
+                            ]
+                        },
+                        "sectors": "11721045071",
+                        "sectorsize": 512,
+                        "size": "5.46 TB",
+                        "start": "64",
+                        "uuid": "4682bf2c-d7c8-4fec-9c22-2d272376d780"
+                    }
+                },
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "11721045168",
+                "sectorsize": "512",
+                "size": "5.46 TB",
+                "support_discard": "4096",
+                "vendor": "ATA",
+                "virtual": 1,
+                "wwn": "0x50014ee212fbbe8e"
+            },
+            "sdb": {
+                "holders": [],
+                "host": "USB controller: Advanced Micro Devices, Inc. [AMD] Matisse USB 3.0 Host Controller",
+                "links": {
+                    "ids": [
+                        "usb-WD_My_Passport_0820_5758363141363444364A4A4B-0:0"
+                    ],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": "My Passport 0820",
+                "partitions": {
+                    "sdb1": {
+                        "holders": [],
+                        "links": {
+                            "ids": [
+                                "usb-WD_My_Passport_0820_5758363141363444364A4A4B-0:0-part1"
+                            ],
+                            "labels": [
+                                "1TB\\x20USB"
+                            ],
+                            "masters": [],
+                            "uuids": [
+                                "35FA2961077AED04"
+                            ]
+                        },
+                        "sectors": "1953454080",
+                        "sectorsize": 512,
+                        "size": "931.48 GB",
+                        "start": "2048",
+                        "uuid": "35FA2961077AED04"
+                    }
+                },
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "1953458176",
+                "sectorsize": "512",
+                "size": "931.48 GB",
+                "support_discard": "0",
+                "vendor": "WD",
+                "virtual": 1
+            }
+        },
+        "distribution": "Ubuntu",
+        "distribution_file_parsed": true,
+        "distribution_file_path": "/etc/os-release",
+        "distribution_file_variety": "Debian",
+        "distribution_major_version": "20",
+        "distribution_release": "focal",
+        "distribution_version": "20.04",
+        "dns": {
+            "nameservers": [
+                "127.0.0.53"
+            ],
+            "options": {
+                "edns0": true,
+                "trust-ad": true
+            }
+        },
+        "domain": "",
+        "effective_group_id": 0,
+        "effective_user_id": 0,
+        "enp36s0": {
+            "active": true,
+            "device": "enp36s0",
+            "ipv4": {
+                "address": "192.168.69.23",
+                "broadcast": "192.168.69.255",
+                "netmask": "255.255.255.0",
+                "network": "192.168.69.0"
+            },
+            "ipv6": [
+                {
+                    "address": "fe80::96ec:3917:5ac:8229",
+                    "prefix": "64",
+                    "scope": "link"
+                }
+            ],
+            "macaddress": "00:d8:61:c5:69:f5",
+            "module": "atlantic",
+            "mtu": 1500,
+            "pciid": "0000:24:00.0",
+            "promisc": false,
+            "speed": 1000,
+            "type": "ether"
+        },
+        "enp43s0": {
+            "active": true,
+            "device": "enp43s0",
+            "ipv4": {
+                "address": "192.168.69.18",
+                "broadcast": "192.168.69.255",
+                "netmask": "255.255.255.0",
+                "network": "192.168.69.0"
+            },
+            "ipv6": [
+                {
+                    "address": "fe80::20b9:5b6:96ba:5936",
+                    "prefix": "64",
+                    "scope": "link"
+                }
+            ],
+            "macaddress": "00:d8:61:c5:69:f4",
+            "module": "igb",
+            "mtu": 1500,
+            "pciid": "0000:2b:00.0",
+            "promisc": false,
+            "speed": 1000,
+            "type": "ether"
+        },
+        "env": {
+            "COLORTERM": "truecolor",
+            "DISPLAY": ":0",
+            "HOME": "/root",
+            "LANG": "en_GB.UTF-8",
+            "LANGUAGE": "en_GB:en",
+            "LOGNAME": "root",
+            "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+            "MAIL": "/var/mail/root",
+            "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin",
+            "PWD": "/home/john/Documents/Laptop-Setup-Playbook/Ansible working playbooks",
+            "SHELL": "/bin/bash",
+            "SUDO_COMMAND": "/usr/bin/ansible-playbook debug.yml",
+            "SUDO_GID": "1000",
+            "SUDO_UID": "1000",
+            "SUDO_USER": "john",
+            "TERM": "xterm-256color",
+            "USER": "root",
+            "XAUTHORITY": "/home/john/.Xauthority"
+        },
+        "fibre_channel_wwn": [],
+        "fips": false,
+        "form_factor": "Desktop",
+        "fqdn": "john-desktop",
+        "gather_subset": [
+            "all"
+        ],
+        "hostname": "john-desktop",
+        "hostnqn": "",
+        "interfaces": [
+            "lo",
+            "enp43s0",
+            "wlo1",
+            "enp36s0"
+        ],
+        "is_chroot": false,
+        "iscsi_iqn": "",
+        "kernel": "5.8.0-48-generic",
+        "kernel_version": "#54~20.04.1-Ubuntu SMP Sat Mar 20 13:40:25 UTC 2021",
+        "lo": {
+            "active": true,
+            "device": "lo",
+            "ipv4": {
+                "address": "127.0.0.1",
+                "broadcast": "host",
+                "netmask": "255.0.0.0",
+                "network": "127.0.0.0"
+            },
+            "ipv6": [
+                {
+                    "address": "::1",
+                    "prefix": "128",
+                    "scope": "host"
+                }
+            ],
+            "mtu": 65536,
+            "promisc": false,
+            "type": "loopback"
+        },
+        "lsb": {
+            "codename": "focal",
+            "description": "Ubuntu 20.04.2 LTS",
+            "id": "Ubuntu",
+            "major_release": "20",
+            "release": "20.04"
+        },
+        "lvm": {
+            "lvs": {
+                "root": {
+                    "size_g": "929.32",
+                    "vg": "vgkubuntu"
+                },
+                "swap_1": {
+                    "size_g": "0.95",
+                    "vg": "vgkubuntu"
+                }
+            },
+            "pvs": {
+                "/dev/mapper/nvme0n1p6_crypt": {
+                    "free_g": "0",
+                    "size_g": "930.28",
+                    "vg": "vgkubuntu"
+                }
+            },
+            "vgs": {
+                "vgkubuntu": {
+                    "free_g": "0",
+                    "num_lvs": "2",
+                    "num_pvs": "1",
+                    "size_g": "930.28"
+                }
+            }
+        },
+        "machine": "x86_64",
+        "machine_id": "18e357a4c74b489186f67628eefdcb68",
+        "memfree_mb": 37529,
+        "memory_mb": {
+            "nocache": {
+                "free": 60510,
+                "used": 3794
+            },
+            "real": {
+                "free": 37529,
+                "total": 64304,
+                "used": 26775
+            },
+            "swap": {
+                "cached": 0,
+                "free": 975,
+                "total": 975,
+                "used": 0
+            }
+        },
+        "memtotal_mb": 64304,
+        "module_setup": true,
+        "mounts": [
+            {
+                "block_available": 219918533,
+                "block_size": 4096,
+                "block_total": 239530792,
+                "block_used": 19612259,
+                "device": "/dev/mapper/vgkubuntu-root",
+                "fstype": "ext4",
+                "inode_available": 60091725,
+                "inode_total": 60907520,
+                "inode_used": 815795,
+                "mount": "/",
+                "options": "rw,relatime,errors=remount-ro",
+                "size_available": 900786311168,
+                "size_total": 981118124032,
+                "uuid": "599204e5-7e45-44df-bd36-49012ab39fc4"
+            },
+            {
+                "block_available": 113793,
+                "block_size": 4096,
+                "block_total": 180092,
+                "block_used": 66299,
+                "device": "/dev/nvme0n1p5",
+                "fstype": "ext4",
+                "inode_available": 46528,
+                "inode_total": 46848,
+                "inode_used": 320,
+                "mount": "/boot",
+                "options": "rw,relatime",
+                "size_available": 466096128,
+                "size_total": 737656832,
+                "uuid": "9e7015bb-58ed-4abd-afa6-756b74880575"
+            },
+            {
+                "block_available": 130811,
+                "block_size": 4096,
+                "block_total": 130812,
+                "block_used": 1,
+                "device": "/dev/nvme0n1p1",
+                "fstype": "vfat",
+                "inode_available": 0,
+                "inode_total": 0,
+                "inode_used": 0,
+                "mount": "/boot/efi",
+                "options": "rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro",
+                "size_available": 535801856,
+                "size_total": 535805952,
+                "uuid": "564E-3367"
+            }
+        ],
+        "nodename": "john-desktop",
+        "os_family": "Debian",
+        "pkg_mgr": "apt",
+        "proc_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-5.8.0-48-generic",
+            "quiet": true,
+            "ro": true,
+            "root": "/dev/mapper/vgkubuntu-root",
+            "splash": true,
+            "vt.handoff": "7"
+        },
+        "processor": [
+            "0",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "1",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "2",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "3",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "4",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "5",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "6",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "7",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "8",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "9",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "10",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "11",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "12",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "13",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "14",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "15",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "16",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "17",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "18",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "19",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "20",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "21",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "22",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor",
+            "23",
+            "AuthenticAMD",
+            "AMD Ryzen 9 3900 12-Core Processor"
+        ],
+        "processor_cores": 12,
+        "processor_count": 1,
+        "processor_threads_per_core": 2,
+        "processor_vcpus": 24,
+        "product_name": "MS-7C36",
+        "product_serial": "To be filled by O.E.M.",
+        "product_uuid": "c96bb7ee-8304-da18-a890-00d861c569f4",
+        "product_version": "1.0",
+        "python": {
+            "executable": "/usr/bin/python3",
+            "has_sslcontext": true,
+            "type": "cpython",
+            "version": {
+                "major": 3,
+                "micro": 5,
+                "minor": 8,
+                "releaselevel": "final",
+                "serial": 0
+            },
+            "version_info": [
+                3,
+                8,
+                5,
+                "final",
+                0
+            ]
+        },
+        "python_version": "3.8.5",
+        "real_group_id": 0,
+        "real_user_id": 0,
+        "selinux": {
+            "status": "disabled"
+        },
+        "selinux_python_present": true,
+        "service_mgr": "systemd",
+        "ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPDNA8z18gU3C5AQ7eJhPWpgoN628f4632Haod94nfCiWwgPd7v9lhdVyeTyQRAQXGe2wFe67niO4PDK2v+1A/A=",
+        "ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIGkTqk05HUwFVwCFg7tqGWDj2EfhKFNU2cXaCaROU+vg",
+        "ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQCqN3I09C7BUBGR++swEk94VL3MVFJufts+2dCkT3kmW6/+KV8m8yaJsLVCG9PqL6WF0St4+x8j/a5hJl6Z+f7Ej78RkHUnwqQ8MoGMzu1MRscdP4Fe4dGXRACsbdpmGqmo3omMIYuGuFtUb42TcZdx/k86ACvl56/08aQK0ebR4nNhCDH8KKF4Q3tPC2OU8NXQRO0/IdtTpqj3v3d/F4ZbcReipRUWqIuhXHV2NFhwvBSlj1iUE3JabALQ92pe67anRcRGUu+PDbX8zjcun9AtPU4OE2MCiyboQooeNwwLoFxtxtzKifk/oDmZUqnmFBlAsVGwoyfQTRMo9wf0x0zYMbzJSfeksC8VqOwqhlm9E3u6UGe1LhHTM9g8v7yU7L5Ws9DdF5Whm2XRtMxc9t1BEODfoYizbT/LpfcDMo9bqn1gxr3ezrUcEkHYpaiATZp99ndr06LHSLk3Flq21WQMmt+BWXxSMMSp5OI67xNdFMMAmBGBYxdKsC/VopOVRKs=",
+        "swapfree_mb": 975,
+        "swaptotal_mb": 975,
+        "system": "Linux",
+        "system_capabilities": [],
+        "system_capabilities_enforced": "False",
+        "system_vendor": "Micro-Star International Co., Ltd.",
+        "uptime_seconds": 6780,
+        "user_dir": "/root",
+        "user_gecos": "root",
+        "user_gid": 0,
+        "user_id": "root",
+        "user_shell": "/bin/bash",
+        "user_uid": 0,
+        "userspace_architecture": "x86_64",
+        "userspace_bits": "64",
+        "virtualization_role": "host",
+        "virtualization_type": "kvm",
+        "wlo1": {
+            "active": false,
+            "device": "wlo1",
+            "macaddress": "50:eb:71:10:2a:39",
+            "module": "iwlwifi",
+            "mtu": 1500,
+            "pciid": "0000:2d:00.0",
+            "promisc": false,
+            "type": "ether"
+        }
+    }
+}
+
+PLAY RECAP *******************************************************************************************
+localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

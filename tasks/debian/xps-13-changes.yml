@@ -1,0 +1,132 @@
+- name: Insert chaotic-aur into pacman conf
+  blockinfile:
+    path: /etc/pacman.conf
+    state: present
+    backup: yes
+    insertafter: EOF
+    validate:
+    marker: "#<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+    block: |
+      [chaotic-aur]
+      # Brazil
+      Server = https://lonewolf.pedrohlc.com/$repo/$arch
+      # USA
+      Server = https://builds.garudalinux.org/repos/$repo/$arch
+      Server = https://repo.kitsuna.net/$arch
+      # Netherlands
+      Server = https://chaotic.tn.dedyn.io/$arch
+      # Germany
+      Server = http://chaotic.bangl.de/$repo/$arch
+
+- name: Add Chaotic Key Mozilla
+  become: yes
+  command: pacman-key --keyserver hkp://keyserver.ubuntu.com -r 3056513887B78AEB 8A9E14A07010F7E3
+  changed_when: False
+
+- name: Add Chaotic Key Lsign
+  become: yes
+  command: pacman-key --lsign-key 3056513887B78AEB
+  changed_when: False
+
+- name: Add Chaotic Key Lsign x2
+  become: yes
+  command: pacman-key --lsign-key 8A9E14A07010F7E3
+  changed_when: False
+
+
+- name: Create Chaotic-aur Database
+  become: yes
+  command: pacman -Sy
+  changed_when: False
+
+- name: Enable Bluetooth fast connect
+  become: yes
+  lineinfile:
+   path: /etc/bluetooth/main.conf
+   regex: FastConnectable =
+   line: FastConnectable = true
+   state: present
+   backup: yes
+
+- name: create service to stop Phantom wake from sleep
+  become: yes
+  blockinfile:
+   create: yes
+   marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+   path: /etc/systemd/system/mouse-wakeup.service
+   state: present
+   backup: yes
+   block: |
+    [Unit]
+    Description=Disables device XHC from being able wake device from sleep
+
+    [Service]
+    ExecStart=/bin/bash -c " echo XHC >> /proc/acpi/wakeup"
+
+    [Install]
+    WantedBy=multi-user.target
+
+- name: Enable service to stop Phantom wakes from sleep
+  become: yes
+  command: systemctl enable mouse-wakeup.service
+  changed_when: False
+
+
+
+- name: Setup Auto SSH
+  become: yes
+  blockinfile:
+   path: ~/.bash_profile
+   state: present
+   insertafter: EOF
+   marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+   block: |
+    #add ssh agent at boot
+    SSH_ENV="$HOME/.ssh/environment"
+
+    function start_agent {
+    echo "Initialising new SSH agent..."
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add;
+    }
+
+    # Source SSH settings, if applicable
+
+    if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}" > /dev/null
+    #ps ${SSH_AGENT_PID} doesn't work under cywgin
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+      start_agent;
+     }
+    else
+        start_agent;
+    fi
+
+- name: Fix Sleep issues
+  become: yes
+  blockinfile:
+    path: /etc/systemd/sleep.conf
+    state: present
+    backup: yes
+    insertafter: EOF
+    validate:
+    marker: "#<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+    block: |
+      [Sleep]
+      AllowSuspend=yes
+      AllowHibernation=yes
+      SuspendState=freeze mem standby
+
+- name: Enable Firefox Touchscreen gestures
+  become: yes
+  lineinfile:
+   path: /etc/security/pam_env.conf
+   regex: MOZ_USE_XINPUT2
+   line: MOZ_USE_XINPUT2 DEFAULT=1
+   state: present
+   backup: yes
+   
+#- name: Pulseaudio - auto switch profile to HDMI  - https://unix.stackexchange.com/questions/462670/set-default-profile-for-pulseaudio

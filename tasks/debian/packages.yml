@@ -1,0 +1,95 @@
+#### spotify  ####
+- name: add spotify apt-key
+  apt_key:
+    url: https://download.spotify.com/debian/pubkey_0D811D58.gpg
+    state: present
+
+- name: add spotify apt repository
+  apt_repository:
+    repo: 'deb http://repository.spotify.com stable non-free'
+    state: present
+    filename: spotify
+    update_cache: yes
+
+- name: install spotify
+  apt:
+    name: spotify-client
+    state: present
+    update_cache: yes
+
+#### Atom  ####
+- name: add atom apt-key
+  apt_key:
+    url: https://packagecloud.io/AtomEditor/atom/gpgkey
+    state: present
+
+- name: add atom apt repository
+  apt_repository:
+    repo: 'deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main'
+    state: present
+    filename: atom
+    update_cache: yes
+
+- name: install atom
+  apt:
+    name: atom
+    state: present
+    update_cache: yes
+
+
+#### Terraform  ####
+- name: add terraform apt-key
+  apt_key:
+    url: https://apt.releases.hashicorp.com/gpg
+    state: present
+
+- name: Terraform Add source repository into sources list
+  ansible.builtin.apt_repository:
+    repo: deb [arch=amd64] https://apt.releases.hashicorp.com "{{ ansible_distribution_release }}" main
+    state: present
+
+- name: install terraform
+  apt:
+    name: terraform
+    state: present
+    update_cache: yes
+
+#### Virtualbox  ####
+- name: add virtualbox apt-key 2016
+  apt_key:
+    url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+    state: present
+
+- name: add virtualbox apt-key 2016
+  apt_key:
+    url: https://www.virtualbox.org/download/oracle_vbox.asc
+    state: present
+
+- name: Virtualbox Add source repository into sources list
+  ansible.builtin.apt_repository:
+    repo: deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian "{{ ansible_distribution_release }}" contrib
+    state: present
+
+- name: install Virtualbox
+  apt:
+    name: virtualbox-6.1
+    state: present
+    update_cache: yes
+
+- name: install packages
+  apt:
+    name:
+      - vlc
+      - vagrant
+      - timeshift
+      - latte-dock
+      - docker.io
+      - awscli
+    state: present
+    update_cache: yes
+
+- name: install snap packages
+  snap:
+    name:
+      - bitwarden
+    state: present
