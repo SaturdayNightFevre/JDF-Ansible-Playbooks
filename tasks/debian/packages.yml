@@ -60,7 +60,7 @@
     url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
     state: present
 
-- name: add virtualbox apt-key 2016
+- name: add virtualbox apt-key
   apt_key:
     url: https://www.virtualbox.org/download/oracle_vbox.asc
     state: present
@@ -72,9 +72,13 @@
 
 - name: install Virtualbox
   apt:
-    name: virtualbox-6.1
+    name: virtualbox-qt
     state: present
     update_cache: yes
+
+- name: configure virtualbox to use windows VM's
+  become: yes
+  command:
 
 - name: install packages
   apt:
@@ -90,6 +94,7 @@
     state: present
     update_cache: yes
 
+
 - name: install snap packages
   snap:
     name:
@@ -97,5 +102,5 @@
     state: present
 
 - name: set python 3 to the default
-  become: yes
-  command: sudo update-alternatives --install /usr/bin/python python /usr/bin/python"{{ ansible_python_version }}" && sudo update-alternatives --config python
+  become: no
+  command: alias python=/usr/bin/python{{ ansible_python.version.major }}.{{ ansible_python.version.minor }}
