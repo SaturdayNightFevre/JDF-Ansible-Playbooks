@@ -36,6 +36,25 @@
     state: present
     update_cache: yes
 
+###### Chrome ########
+- name: add atom apt-key
+  apt_key:
+    url: https://dl.google.com/linux/linux_signing_key.pub
+    state: present
+
+- name: add chrome apt repository
+  apt_repository:
+    repo: 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
+    state: present
+    filename: chrome
+    update_cache: yes
+
+- name: install chrome
+  apt:
+    name: chrome
+    state: present
+    update_cache: yes
+
 
 #### Terraform  ####
 - name: add terraform apt-key
