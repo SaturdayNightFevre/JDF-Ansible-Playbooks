@@ -91,9 +91,16 @@
       - awscli
       - jq
       - npm
+      - mailspring
     state: present
     update_cache: yes
 
+- name: uninstall packages
+  apt:
+    name:
+      - thunderbird
+    state: absent
+    update_cache: yes
 
 - name: install snap packages
   snap:
