@@ -124,15 +124,11 @@
       - awscli
       - jq
       - npm
-<<<<<<< HEAD
       - filezilla
       - steam
       - zoom
+      - piper
 
-=======
-      - mailspring
-      - piper 
->>>>>>> 5277f85cdd98edd786fdd87e645e9ccfaff567af
     state: present
     update_cache: yes
 
@@ -149,7 +145,3 @@
       - bitwarden
       - mailspring
     state: present
-
-- name: set python 3 to the default
-  become: no
-  command: alias python=/usr/bin/python{{ ansible_python.version.major }}.{{ ansible_python.version.minor }}
