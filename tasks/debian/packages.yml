@@ -111,6 +111,7 @@
       - jq
       - npm
       - mailspring
+      - piper 
     state: present
     update_cache: yes
 
