@@ -124,10 +124,15 @@
       - awscli
       - jq
       - npm
+<<<<<<< HEAD
       - filezilla
       - steam
       - zoom
 
+=======
+      - mailspring
+      - piper 
+>>>>>>> 5277f85cdd98edd786fdd87e645e9ccfaff567af
     state: present
     update_cache: yes
 
