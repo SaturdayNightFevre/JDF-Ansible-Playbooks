@@ -127,6 +127,7 @@
       - filezilla
       - steam
       - piper
+      - libnotify-bin
 
     state: present
     update_cache: yes
