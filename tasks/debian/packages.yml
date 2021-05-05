@@ -126,7 +126,6 @@
       - npm
       - filezilla
       - steam
-      - zoom
       - piper
 
     state: present
