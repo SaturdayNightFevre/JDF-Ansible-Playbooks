@@ -51,7 +51,7 @@
 
 - name: install chrome
   apt:
-    name: chrome
+    name: google-chrome-stable
     state: present
     update_cache: yes
 
@@ -70,6 +70,23 @@
 - name: install terraform
   apt:
     name: terraform
+    state: present
+    update_cache: yes
+
+#### Teamviewer  ####
+- name: add teamviewer apt-key
+  apt_key:
+    url: https://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc
+    state: present
+
+- name: Terraform Add source repository into sources list
+  ansible.builtin.apt_repository:
+    repo: deb http://linux.teamviewer.com/deb stable main
+    state: present
+
+- name: install teamviewer
+  apt:
+    name: teamviewer
     state: present
     update_cache: yes
 
@@ -95,9 +112,6 @@
     state: present
     update_cache: yes
 
-- name: configure virtualbox to use windows VM's
-  become: yes
-  command:
 
 - name: install packages
   apt:
@@ -110,7 +124,10 @@
       - awscli
       - jq
       - npm
-      - mailspring
+      - filezilla
+      - steam
+      - zoom
+
     state: present
     update_cache: yes
 
@@ -125,6 +142,7 @@
   snap:
     name:
       - bitwarden
+      - mailspring
     state: present
 
 - name: set python 3 to the default
