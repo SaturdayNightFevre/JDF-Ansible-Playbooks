@@ -117,6 +117,7 @@
   apt:
     name:
       - vlc
+      - python3-pip
       - vagrant
       - timeshift
       - latte-dock
