@@ -8,10 +8,11 @@ trigger:
     - release-candidate/*
   event:
     - push
-  concurrency:
-    limit: 1
+concurrency:
+  limit: 1
 
 steps:
+
   - name: running pipeline
     image: alpine:3.11.6
     environment:
