@@ -16,3 +16,6 @@ steps:
     image: alpine:3.11.6
     commands:
       - echo uat-1.1
+    when:
+     event:
+       - push
