@@ -1,23 +1,28 @@
+  ############################## Test Pipeline ############################
 kind: pipeline
  type: docker
  name: test-pipeline
 
+trigger:
+  branch:
+    - release-candidate/
 
- trigger:
- branch:
- -  release-candidate/ 
- event:
- - pull_request
- - push
- concurrency:
- limit: 1
-
+  event:
+    - pull_request
+    - push
+concurrency:
+  limit: 1
+volumes:
+- name: docker_sock
+  host:
+    path: /var/run/docker.sock
 
  steps:
+  # Clean agent images and containers to prevent disk space overuse
+  - name: echo test
+    image: docker:19.03.11-git
+    commands:
+      - echo 'test1'
 
+  ############################## End of Test Pipeline ############################
 
- # Clean agent images and containers to prevent disk space overuse
- - name: echo test
- image: docker:19.03.11-git
- commands:
- - echo 'test'
