@@ -6,16 +6,17 @@ name: mod-api-dev-parallel
 trigger:
   branch:
     - release-candidate/
-
   event:
     - pull_request
     - push
 concurrency:
   limit: 1
+
 volumes:
 - name: docker_sock
   host:
     path: /var/run/docker.sock
+
 
 steps:
 
@@ -23,6 +24,4 @@ steps:
   - name: echo test
     image: docker:19.03.11-git
     commands:
-      - echo 'test1'
-
-  ############################## End of Test Pipeline ############################
+      - echo 'test3'
