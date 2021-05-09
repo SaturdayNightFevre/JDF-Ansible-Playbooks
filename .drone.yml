@@ -1,4 +1,3 @@
-   ###################### Test Pipeline #####################
 kind: pipeline
 type: docker
 name: TEST-Pipeline
@@ -10,6 +9,10 @@ trigger:
     - push
 concurrency:
   limit: 1
+volumes:
+  - name: docker_sock
+    host:
+      path: /var/run/docker.sock
 
 steps:
 
@@ -22,5 +25,13 @@ steps:
     when:
      event:
        - pull_request
+       - push
 
----
+  - name: echo John
+    image: docker:19.03.11-git
+    commands:
+      - echo 'John'
+    when:
+      event:
+        - pull_request
+        - push
