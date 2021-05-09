@@ -1,4 +1,4 @@
-######################Test Pipeline#####################
+   ######################Test Pipeline#####################
 kind: pipeline
 type: docker
 name: TEST-Pipeline
@@ -7,12 +7,21 @@ trigger:
   branch:
     - release-candidate/*
   event:
+    - pull_request
     - push
-  concurrency:
-    limit: 1
+concurrency:
+  limit: 1
 
 steps:
-  - name: running pipeline
-    image: alpine:3.11.6
+
+  - name: echo version
+    image: docker:19.03.11-git
     commands:
-      - echo uat-1.1
+      - echo $VERSION
+    environment:
+      VERSION: 1.2
+    when:
+     event:
+       - pull_request
+
+---
