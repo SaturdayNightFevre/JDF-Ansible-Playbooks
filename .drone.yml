@@ -4,7 +4,7 @@ name: mod-api-dev-parallel
 
 trigger:
   branch:
-    - develop
+    - release-candidate/
   event:
     - pull_request
     - push
