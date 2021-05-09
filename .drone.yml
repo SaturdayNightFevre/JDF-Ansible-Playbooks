@@ -1,0 +1,21 @@
+######################Test Pipeline#####################
+kind: pipeline
+type: docker
+name: TEST-Pipeline
+
+trigger:
+  ref:
+    include :
+      - ref/head/uat-*
+  branch:
+    - release-candidate/
+  event:
+    - push
+  concurrency:
+    limit: 1
+
+steps:
+  - name: running pipeline
+    image: alpine:3.11.6
+    commands:
+      - echo tractor

@@ -4,21 +4,23 @@
       beautifyEntireFileOnSave: false
     yaml:
       disabled: true
-
   core:
     autoHideMenuBar: true
     telemetryConsent: "no"
     themes: [
-      "seti-ui"
-      "br4ckets-dark"
+      "one-dark-ui"
+      "atom-dark-syntax"
     ]
   editor:
+       fontSize: 15
     showInvisibles: true
   "exception-reporting":
     userId: "df2ae023-653b-4e81-9212-962492df6e73"
+      "scroll-through-time":
+    autoToggle: false
+    modifierKey: "altKey"
   "seti-ui":
     hideProjectTab: true
     hideTitleBar: true
-    themeColor: "Orange"
   welcome:
     showOnStartup: false
