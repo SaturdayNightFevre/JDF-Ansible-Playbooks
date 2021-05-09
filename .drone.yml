@@ -1,37 +1,20 @@
 kind: pipeline
 type: docker
-name: TEST-Pipeline
+name: mod-api-dev-parallel
+
 trigger:
   branch:
-    - release-candidate/*
+    - develop
   event:
     - pull_request
     - push
 concurrency:
   limit: 1
-volumes:
-  - name: docker_sock
-    host:
-      path: /var/run/docker.sock
-
+  
 steps:
 
-  - name: echo version
+  # Clean agent images and containers to prevent disk space overuse
+  - name: echo test
     image: docker:19.03.11-git
     commands:
-      - echo $VERSION
-    environment:
-      VERSION: 1.2
-    when:
-     event:
-       - pull_request
-       - push
-
-  - name: echo John
-    image: docker:19.03.11-git
-    commands:
-      - echo 'John'
-    when:
-      event:
-        - pull_request
-        - push
+      - echo 'test'
