@@ -23,6 +23,6 @@ steps:
   - name: echo test
     image: docker:19.03.11-git
     commands:
-      - echo 'test'
+      - echo 'test1'
 
   ############################## End of Test Pipeline ############################
