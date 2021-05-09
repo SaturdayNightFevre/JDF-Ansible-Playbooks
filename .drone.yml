@@ -1,3 +1,4 @@
+---
 ######################Test Pipeline#####################
 kind: pipeline
 type: docker
@@ -23,3 +24,5 @@ steps:
     when:
      event:
        - pull_request
+
+---
