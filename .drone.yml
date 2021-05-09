@@ -21,3 +21,13 @@ steps:
     when:
      event:
        - pull_request
+       - push
+
+  - name: echo John
+    image: docker:19.03.11-git
+    commands:
+      - echo 'John'
+    when:
+      event:
+        - pull_request
+        - push
