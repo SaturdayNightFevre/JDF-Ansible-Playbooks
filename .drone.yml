@@ -1,5 +1,4 @@
----
-######################Test Pipeline#####################
+   ######################Test Pipeline#####################
 kind: pipeline
 type: docker
 name: TEST-Pipeline
