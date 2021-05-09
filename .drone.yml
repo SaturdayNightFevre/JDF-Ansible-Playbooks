@@ -4,9 +4,6 @@ type: docker
 name: TEST-Pipeline
 
 trigger:
-  ref:
-    include:
-      - ref/head/uat-*
   branch:
     - release-candidate/*
   event:
@@ -17,8 +14,10 @@ trigger:
 steps:
   - name: running pipeline
     image: alpine:3.11.6
+    environment:
+      VERSION: 1.2
     commands:
-      - echo uat-1.1
+      - echo $VERSION
     when:
      event:
        - push
