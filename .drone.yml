@@ -4,13 +4,14 @@ name: mod-api-dev-parallel
 
 trigger:
   branch:
-    - develop
+    - release-candidate/
+
   event:
     - pull_request
     - push
 concurrency:
   limit: 1
-  
+
 steps:
 
   # Clean agent images and containers to prevent disk space overuse
