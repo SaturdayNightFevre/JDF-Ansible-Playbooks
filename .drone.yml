@@ -18,4 +18,4 @@ steps:
   - name: running pipeline
     image: alpine:3.11.6
     commands:
-      - echo tractor
+      - echo uat-1.0
