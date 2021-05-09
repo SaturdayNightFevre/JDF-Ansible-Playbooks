@@ -4,8 +4,11 @@ type: docker
 name: TEST-Pipeline
 
 trigger:
+  ref:
+    include :
+      - ref/head/uat-*
   branch:
-    - release-candidate/
+    - release-candidate/*
   event:
     - push
   concurrency:
