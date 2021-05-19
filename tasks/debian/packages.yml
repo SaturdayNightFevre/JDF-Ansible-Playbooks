@@ -129,6 +129,7 @@
       - steam
       - piper
       - libnotify-bin
+      - nextcloud-desktop
 
     state: present
     update_cache: yes
